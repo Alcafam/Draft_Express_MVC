@@ -1,0 +1,12 @@
+<%- include('partials/header') %>
+<div class="container">
+    <a class="btn btn-secondary float-end" href="/logout">Logout</a>
+    <h1>Welcome <%= user.first_name %>!</h1>
+    <div class="border border-1 w-25">
+        <p>First Name: <%= user.first_name %></p>
+        <p>Last Name: <%= user.last_name %></p>
+        <p>Email Address: <%= user.email_address %></p>
+    </div>
+</div>
+    
+<%- include('partials/footer') %>

@@ -1,0 +1,13 @@
+<div style="width: 80%; margin-right:auto; margin-left:auto; margin-top:10px">
+    <% for( let key in profiler){ 
+        if(typeof profiler[key] === 'object' && profiler[key] !== null && !Array.isArray(profiler[key])){
+    %>  
+    
+        <div style="border: 1px solid black; font-weight: normal; padding: 10px"><span style="font-weight: bolder"><%=key%>: </span><%=profiler[key]%></div> 
+
+
+    <%  }else{ %>
+            <div style="border: 1px solid black; font-weight: normal; padding: 10px"><span style="font-weight: bolder"><%=key%>: </span><%= profiler[key]%></div>
+    <%  }
+    } %>
+</div>

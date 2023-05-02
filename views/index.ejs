@@ -1,0 +1,88 @@
+<%- include('partials/header') %>
+
+<div class="row mb-3">
+    <div class="text-danger text-center">
+        <% for(let i in errors){ %>
+            <p><%= errors[i] %></p>
+        <% } %>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 px-5 pt-5">
+        <h1>Register Form</h1>
+        <form action="/registration" method="POST">
+            <div class="row mb-3">
+                <label for="first_name" class="col-sm-2 col-form-label">First Name: </label>
+                <div class="col-sm-6">
+                    <% if(fields.first_name != ''){ %>
+                        <input type="text" class="form-control" name="first_name" value="<%= fields.first_name %>">
+                    <% }else{ %>
+                        <input type="text" class="form-control" name="first_name">
+                    <% } %>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="last_name" class="col-sm-2 col-form-label">Last Name: </label>
+                <div class="col-sm-6">
+                    <% if(fields.last_name != ''){ %>
+                        <input type="text" class="form-control" name="last_name" value="<%= fields.last_name %>">
+                    <% }else{ %>
+                        <input type="text" class="form-control" name="last_name">
+                    <% } %>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="email_address" class="col-sm-2 col-form-label">Email Address: </label>
+                <div class="col-sm-6">
+                    <% if(fields.last_name != ''){ %>
+                        <input type="email" class="form-control" name="email_address" value="<%= fields.email_address %>">
+                    <% }else{ %>
+                        <input type="email" class="form-control" name="email_address">
+                    <% } %>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="password" class="col-sm-2 col-form-label">Password: </label>
+                <div class="col-sm-6">
+                    <input type="password" class="form-control" name="password">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="confirm_password" class="col-sm-2 col-form-label">Confirm Password: </label>
+                <div class="col-sm-6">
+                    <input type="password" class="form-control" name="confirm_password">
+                </div>
+            </div>            
+            
+            <input type="submit" class="btn btn-primary" value="Register">
+        </form>
+    </div>
+
+    <div class="col-md-6 px-5 pt-5">
+        <h1>Login Form</h1>
+        <form action="/login" method="POST">
+            <div class="row mb-3">
+                <label for="login_email_address" class="col-sm-2 col-form-label">Email Address: </label>
+                <div class="col-sm-6">
+                    <input type="email" class="form-control" name="login_email_address">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="login_password" class="col-sm-2 col-form-label">Password: </label>
+                <div class="col-sm-6">
+                    <input type="password" class="form-control" name="login_password">
+                </div>
+            </div>
+
+            <input type="submit" class="btn btn-primary" value="Login">
+        </form>
+    </div>
+</div>
+
+<%- include('partials/footer') %>
